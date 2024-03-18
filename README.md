@@ -52,3 +52,6 @@ This project is licensed under the MIT License.
 
 - Heartfelt thanks to the instructors and mentors at Hillel School for their invaluable guidance throughout the Node.js course.
 - Appreciation to my peers for their support and collaboration.
+
+## Task 2
+# Video preview:
