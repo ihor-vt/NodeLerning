@@ -55,3 +55,6 @@ This project is licensed under the MIT License.
 
 ## Task 2
 # Video preview:
+https://github.com/ihor-vt/NodeLerning/assets/130864262/742d102a-07fe-486a-91b0-50d5e2d1758e
+
+
