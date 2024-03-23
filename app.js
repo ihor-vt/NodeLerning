@@ -1,5 +1,6 @@
 const express = require('express');
 const databaseService = require('./services/databaseService');
+const e = require('express');
 
 const app = express();
 const PORT = 3000;
@@ -12,7 +13,7 @@ app.post('/users', (req, res) => {
     const user = req.body;
     databaseService.createUser(user, (err, result) => {
         if (err) {
-            return res.status(500).json({ error: 'Internal Server Error' });
+            return res.status(500).json({ error: err.message });
         }
         res.status(201).json(result);
     });
@@ -22,7 +23,7 @@ app.post('/users', (req, res) => {
 app.get('/users', (req, res) => {
     databaseService.getUsers((err, result) => {
         if (err) {
-            return res.status(500).json({ error: 'Internal Server Error' });
+            return res.status(500).json({ error: err.message });
         }
         res.status(200).json(result);
     });
@@ -35,7 +36,7 @@ app.put('/users/:id', (req, res) => {
 
     databaseService.updateUser(id, userUpdates, (err, result) => {
         if (err) {
-            return res.status(500).json({ error: 'Internal Server Error' });
+            return res.status(500).json({ error: err.message });
         }
         res.status(200).json(result);
     });
@@ -46,7 +47,7 @@ app.delete('/users/:id', (req, res) => {
     const { id } = req.params;
     databaseService.deleteUser(id, (err, result) => {
         if (err) {
-            return res.status(500).json({ error: 'Internal Server Error' });
+            return res.status(500).json({ error: err.message });
         }
         res.status(200).json(result);
     });
